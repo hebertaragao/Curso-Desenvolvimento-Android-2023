@@ -1,4 +1,4 @@
 package devandroid.aragao.applistacurso.controller;
 
-public class CursoController {
+public class PessoaController {
 }
