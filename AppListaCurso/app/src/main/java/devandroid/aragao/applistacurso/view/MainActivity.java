@@ -15,39 +15,31 @@ import devandroid.aragao.applistacurso.controller.PessoaController;
 import devandroid.aragao.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences preferences;
-    SharedPreferences.Editor listaVip;
-    public static final String NOME_PREFERENCES = "pref_listavip";
-        PessoaController controller;
-        Pessoa pessoa;
-        Pessoa outraPessoa;
-        String dadosPessoa;
-        String dadosOutraPessoa;
-        EditText editPrimeiroNome;
-        EditText editSobreNomeAluno;
-        EditText editNomeDoCurso;
-        EditText editTelefoneContato;
-        Button btnLimpar;
-        Button btnSalvar;
-        Button btnFinalizar;
+    PessoaController controller;
+    Pessoa pessoa;
+    Pessoa outraPessoa;
+    String dadosPessoa;
+    String dadosOutraPessoa;
+    EditText editPrimeiroNome;
+    EditText editSobreNomeAluno;
+    EditText editNomeDoCurso;
+    EditText editTelefoneContato;
+    Button btnLimpar;
+    Button btnSalvar;
+    Button btnFinalizar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
-
         //Atribuir conteúdo, dados, valores, para o objeto
 
-        controller = new PessoaController();
+        controller = new PessoaController(MainActivity.this);
         controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
-        pessoa.setSobreNome(preferences.getString("sobreNome", ""));
-        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
-        pessoa.setTelefoneContato(preferences.getString("telefoneContato", ""));
+        controller.buscar(pessoa);
 
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
@@ -77,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 editNomeDoCurso.setText("");
                 editTelefoneContato.setText("");
 
-                listaVip.clear();
-                listaVip.apply();
+                controller.limpar();
             }
         });
 
@@ -97,13 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setSobreNome(editSobreNomeAluno.getText().toString());
                 pessoa.setCursoDesejado(editNomeDoCurso.getText().toString());
                 pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
-                Toast.makeText(MainActivity.this, "Salvo!"+pessoa.toString(), Toast.LENGTH_LONG).show();
-
-                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
-                listaVip.putString("sobreNome", pessoa.getSobreNome());
-                listaVip.putString("nomeCurso", pessoa.getCursoDesejado());
-                listaVip.putString("telefoneContato", pessoa.getTelefoneContato());
-                listaVip.apply();
+                Toast.makeText(MainActivity.this, "Salvo!" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
                 controller.salvar(pessoa);
             }
