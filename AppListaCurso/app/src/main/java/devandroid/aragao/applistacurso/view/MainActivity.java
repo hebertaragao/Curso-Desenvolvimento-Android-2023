@@ -15,35 +15,28 @@ import devandroid.aragao.applistacurso.controller.PessoaController;
 import devandroid.aragao.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
-
     SharedPreferences preferences;
+    SharedPreferences.Editor listaVip;
     public static final String NOME_PREFERENCES = "pref_listavip";
-
         PessoaController controller;
-
         Pessoa pessoa;
         Pessoa outraPessoa;
-
         String dadosPessoa;
         String dadosOutraPessoa;
-
         EditText editPrimeiroNome;
         EditText editSobreNomeAluno;
         EditText editNomeDoCurso;
         EditText editTelefoneContato;
-
         Button btnLimpar;
         Button btnSalvar;
         Button btnFinalizar;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+        listaVip = preferences.edit();
 
         //Atribuir conteúdo, dados, valores, para o objeto
 
@@ -83,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
                 editSobreNomeAluno.setText("");
                 editNomeDoCurso.setText("");
                 editTelefoneContato.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
             }
         });
 
