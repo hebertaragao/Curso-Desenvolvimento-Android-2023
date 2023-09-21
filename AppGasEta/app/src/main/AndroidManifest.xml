@@ -15,7 +15,7 @@
             android:name=".view.MainActivity"
             android:exported="false" />
         <activity android:name=".view.GasEtaActivity"
-            android:enabled="false"/>
+            android:exported="false"/>
         <activity
             android:name=".view.SplashActivity"
             android:exported="true">
