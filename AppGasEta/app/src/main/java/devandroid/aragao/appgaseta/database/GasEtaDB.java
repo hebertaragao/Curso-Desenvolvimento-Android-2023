@@ -1,5 +1,6 @@
 package devandroid.aragao.appgaseta.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,9 +10,9 @@ import androidx.annotation.Nullable;
 
 public class GasEtaDB extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "gaseta.db";
+    private static final String DB_NAME = "gaseta.db";
 
-    public static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 1;
 
     Cursor cursor;
 
@@ -42,21 +43,9 @@ public class GasEtaDB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    // Criar métodos para implementar um CRUD
-    // C = Create criar o banco de dados e as tabelas
-    // Create database nome_do_banco_de_dados.db (SQL)
-    // 1 - Nome do Banco de Dados
-    // 2 - Verdão do Banco de Dados
 
+    public void salvarObjeto(String tabela, ContentValues dados){
 
-    // Cretae table (SQL)
-
-    // R = Retrieve recuperar os dados salvos das tabelas
-    // Select * from table (SQL)
-
-    // U = Update alterar os dados que já existem em um registro na tabela
-    // Update from table (SQL)
-
-    // D = Delete deletar os dados/registros de uma tabela
-    // Delete from (SQL)
+        db.insert(tabela, null, dados);
+    }
 }

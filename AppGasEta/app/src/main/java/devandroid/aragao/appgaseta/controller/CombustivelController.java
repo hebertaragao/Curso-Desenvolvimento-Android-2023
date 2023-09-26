@@ -1,5 +1,6 @@
 package devandroid.aragao.appgaseta.controller;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 
 import devandroid.aragao.appgaseta.database.GasEtaDB;
@@ -22,10 +23,18 @@ public class CombustivelController extends GasEtaDB {
 
     public void salvar(Combustivel combustivel){
 
+        ContentValues dados = new ContentValues();
+
         dadosPreferences.putString("Combustivel", combustivel.getNomeDoCombustivel());
         dadosPreferences.putFloat("Preodocombustivel", (float) combustivel.getPrecoDoCombustivel());
         dadosPreferences.putString("recomendacao", combustivel.getRecomendacao());
         dadosPreferences.apply();
+
+        dados.put("nomeDoCombustivel", combustivel.getNomeDoCombustivel());
+        dados.put("precoDoCombustivel", combustivel.getPrecoDoCombustivel());
+        dados.put("recomendacao", combustivel.getRecomendacao());
+
+        salvarObjeto("Combustivel", dados);
 
     }
     public void limpar(){
