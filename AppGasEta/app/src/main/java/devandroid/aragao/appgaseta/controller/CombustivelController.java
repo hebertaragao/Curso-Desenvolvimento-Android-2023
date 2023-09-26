@@ -3,6 +3,8 @@ package devandroid.aragao.appgaseta.controller;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
 
+import java.util.List;
+
 import devandroid.aragao.appgaseta.database.GasEtaDB;
 import devandroid.aragao.appgaseta.model.Combustivel;
 import devandroid.aragao.appgaseta.view.GasEtaActivity;
@@ -36,6 +38,10 @@ public class CombustivelController extends GasEtaDB {
 
         salvarObjeto("Combustivel", dados);
 
+    }
+
+    public List<Combustivel> getListaDeDados(){
+        return listarDados();
     }
     public void limpar(){
         dadosPreferences.clear();
