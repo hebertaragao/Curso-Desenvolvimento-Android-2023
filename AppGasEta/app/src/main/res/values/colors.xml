@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="corBotoes">#00BCD4</color>
     <color name="vermelho">#E40707</color>
+    <color name="fundoHint">#FFBB86FC</color>
+
 
 </resources>
