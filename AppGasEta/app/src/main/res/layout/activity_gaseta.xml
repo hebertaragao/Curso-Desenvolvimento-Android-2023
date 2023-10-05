@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/estrada"
     tools:context=".view.GasEtaActivity">
 
     <ScrollView
@@ -28,7 +27,6 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/txt_titulo"
                 android:textAlignment="center"
-                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -55,10 +53,7 @@
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_gasolina"
                     android:inputType="numberDecimal"
-                    android:textAlignment="center"
-                    android:textColorHint="@color/white"
-                    android:background="@color/fundoHint"
-                    android:textStyle="bold" />
+                    android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/editEtanol"
@@ -70,10 +65,7 @@
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_etanol"
                     android:inputType="numberDecimal"
-                    android:textAlignment="center"
-                    android:textColorHint="@color/white"
-                    android:background="@color/fundoHint"
-                    android:textStyle="bold" />
+                    android:textAlignment="center" />
             </LinearLayout>
 
             <Button
@@ -83,9 +75,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_calcular"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:text="@string/txt_BUTTON_calcular" />
 
             <TextView
                 android:id="@+id/txtResultado"
@@ -96,7 +86,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/txt_resultado"
-                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -109,9 +98,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_limpar"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:text="@string/txt_BUTTON_limpar" />
 
             <Button
                 android:id="@+id/btnSalvar"
@@ -121,9 +108,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:enabled="false"
-                android:text="@string/txt_BUTTON_salvar"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:text="@string/txt_BUTTON_salvar" />
 
             <Button
                 android:id="@+id/btnFinalizar"
@@ -132,9 +117,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_finalizar"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:text="@string/txt_BUTTON_finalizar" />
 
         </LinearLayout>
     </ScrollView>
