@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/estrada"
     tools:context=".view.GasEtaActivity">
 
     <ScrollView
@@ -27,6 +28,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/txt_titulo"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
