@@ -27,6 +27,7 @@
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/txt_titulo"
+                android:background="@color/purple_500"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="24sp"
@@ -52,10 +53,13 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="48dp"
+                    android:background="@color/purple_500"
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_gasolina"
                     android:inputType="numberDecimal"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColorHint="@color/white"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editEtanol"
@@ -64,10 +68,13 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:background="@color/purple_500"
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_etanol"
                     android:inputType="numberDecimal"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColorHint="@color/white"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Button
@@ -77,7 +84,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_calcular" />
+                android:text="@string/txt_BUTTON_calcular"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtResultado"
@@ -89,6 +97,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/txt_resultado"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -100,7 +109,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_limpar" />
+                android:text="@string/txt_BUTTON_limpar"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnSalvar"
@@ -110,7 +120,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:enabled="false"
-                android:text="@string/txt_BUTTON_salvar" />
+                android:text="@string/txt_BUTTON_salvar"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnFinalizar"
@@ -119,7 +131,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/txt_BUTTON_finalizar" />
+                android:text="@string/txt_BUTTON_finalizar"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
